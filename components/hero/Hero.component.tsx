@@ -1,5 +1,6 @@
 'use client';
 
+import { memo } from 'react';
 import { Button } from '../button';
 import Image from 'next/image';
 
@@ -33,4 +34,4 @@ const HeroComponent = () => {
   );
 };
 
-export default HeroComponent;
+export default memo(HeroComponent);

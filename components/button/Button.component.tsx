@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { ButtonProps } from './button.types';
+import { memo } from 'react';
 
 const ButtonComponent = ({
   disabled = false,
@@ -22,4 +23,4 @@ const ButtonComponent = ({
   );
 };
 
-export default ButtonComponent;
+export default memo(ButtonComponent);

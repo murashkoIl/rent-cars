@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '../button';
+import { memo } from 'react';
 
 const HeaderComponent = () => {
   return (
@@ -25,4 +26,4 @@ const HeaderComponent = () => {
   );
 };
 
-export default HeaderComponent;
+export default memo(HeaderComponent);

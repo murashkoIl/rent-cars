@@ -1,6 +1,11 @@
 import { Hero } from './hero';
-import { Button } from './button';
 import { Header } from './header';
 import { Footer } from './footer';
+import { CarCatalogue } from './car-catalogue';
 
-export { Hero, Button, Header, Footer };
+export {
+  Hero,
+  Header,
+  Footer,
+  CarCatalogue,
+};

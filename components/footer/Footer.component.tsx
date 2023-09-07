@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { FOOTER_LINKS } from '@/constants';
+import { memo } from 'react';
 
 const FooterComponent = () => {
   return (
@@ -53,4 +54,4 @@ const FooterComponent = () => {
   );
 };
 
-export default FooterComponent;
+export default memo(FooterComponent);
