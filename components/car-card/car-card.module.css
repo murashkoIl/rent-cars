@@ -1,0 +1,58 @@
+@keyframes expand {
+  from {
+    padding-bottom: 1em;
+  }
+  to {
+    padding-bottom: 4.5em;
+  }
+}
+
+@keyframes reverseExpand {
+  from {
+    padding-bottom: 4.5em;
+  }
+  to {
+    padding-bottom: 1em;
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-200%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes reverseSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+.expandCard {
+  position: relative;
+  animation: reverseExpand 1.5s ease 0s 1 forwards;
+}
+
+.expandCard .slideButton {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  width: calc(100% - 2em);
+  padding-bottom: 1em;
+  animation: reverseSlide 1s ease 0s 1 forwards;
+}
+
+.expandCard:hover {
+  animation: expand .5s ease 0s 1 forwards;
+}
+
+.expandCard:hover .slideButton {
+  animation: slide 1s ease 0s 1 forwards;
+  padding-bottom: 1em;
+}

@@ -9,11 +9,12 @@ export interface CarResponse {
   highway_mpg: number;
   make: string;
   model: string;
-  transmission: string;
+  transmission: Transmission;
   year: number;
 }
 
 export interface Car {
+  id: string;
   cityMpg: number;
   carClass: string;
   combinationMpg: number;
@@ -24,6 +25,8 @@ export interface Car {
   highwayMpg: number;
   make: string;
   model: string;
-  transmission: string;
+  transmission: Transmission;
   year: number;
 }
+
+type Transmission = 'a' | 'm'

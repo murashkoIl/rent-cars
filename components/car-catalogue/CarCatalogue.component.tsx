@@ -4,7 +4,7 @@ import { fetchCars } from '@/utils/api.util';
 import { CarCard } from '../car-card';
 import { SearchBar } from '../search-bar';
 import { CustomFilter } from '../custom-filter';
-import { log } from 'console';
+import CarsProvider from '@/context/cars.context';
 
 const CarCatalogueComponent = async () => {
   const cars = await fetchCars();
@@ -18,32 +18,29 @@ const CarCatalogueComponent = async () => {
   }
 
   return (
-    <div className="mt-12 padding-x -adding-y max-width" id="discover">
-      <div className="home__text-container">
-        <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
-        <p>Explore the cars you might like</p>
-      </div>
-
-      <div className="home__filters">
-        <SearchBar />
-
-        <div className="home__filter-container">
-          <CustomFilter title="fuel" />
-          <CustomFilter title="year" />
+      <div className="mt-12 padding-x -adding-y max-width" id="discover">
+        <div className="home__text-container">
+          <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
+          <p>Explore the cars you might like</p>
         </div>
-      </div>
 
-      <section>
-        <div className="home__cars-wrapper">
-          {cars?.map((car) => (
-            <CarCard
-              key={car.model + car.drive + car.carClass + car.cityMpg}
-              {...car}
-            />
-          ))}
+        <div className="home__filters">
+          <SearchBar />
+
+          <div className="home__filter-container">
+            <CustomFilter title="fuel" />
+            <CustomFilter title="year" />
+          </div>
         </div>
-      </section>
-    </div>
+
+        <section>
+          <div className="home__cars-wrapper">
+            {cars?.map((car, idx) => (
+              <CarCard key={idx} {...car} />
+            ))}
+          </div>
+        </section>
+      </div>
   );
 };
 

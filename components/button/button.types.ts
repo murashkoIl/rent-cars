@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react';
 
-type ButtonType = 'submit' | 'reset' | 'button';
+export type ButtonType = 'submit' | 'reset' | 'button';
 
 export interface ButtonProps {
   title: string;

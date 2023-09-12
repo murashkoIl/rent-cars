@@ -1,9 +1,31 @@
-import { memo } from 'react'
+import { memo } from 'react';
+import { CustomButtonProps } from './custom-button.types';
+import Image from 'next/image';
 
-const CustomButtonComponent = () => {
+const CustomButtonComponent = ({
+  disabled = false,
+  type = 'button',
+  onClick,
+  containerStyles,
+  textStyles,
+  title,
+  icon
+}: CustomButtonProps) => {
   return (
-    <div>CustomButton.component</div>
-  )
-}
+    <button
+      className={`custom-btn ${containerStyles}`}
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+    >
+      <span className={`flex-1 ${textStyles}`}>{title}</span>
+      {icon && (
+        <div className='relative w-5 h-5'>
+          <Image src={icon} alt='Show details icon' fill className='object-contain' />
+        </div>
+      )}
+    </button>
+  );
+};
 
 export default memo(CustomButtonComponent);

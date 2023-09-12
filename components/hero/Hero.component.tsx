@@ -3,9 +3,17 @@
 import { memo } from 'react';
 import { Button } from '../button';
 import Image from 'next/image';
+import { redirect, useRouter } from 'next/navigation';
+import { AppRoutes } from '@/constants';
+import { useSession, signIn } from 'next-auth/react';
 
 const HeroComponent = () => {
-  const handleScroll = () => {};
+  const router = useRouter();
+  const { data: session} = useSession();
+  
+  const onExploreCarsClick = () => {
+    session?.user ? router.push(AppRoutes.CarsCatalogue) : signIn('', { callbackUrl: AppRoutes.CarsCatalogue });
+  };
 
   return (
     <div className="hero">
@@ -21,7 +29,7 @@ const HeroComponent = () => {
         <Button
           title="Explore Cars"
           styles="bg-primary-blue text-white rounded-full mt-10"
-          onClick={handleScroll}
+          onClick={onExploreCarsClick}
         />
       </div>
       <div className="hero__image-container">

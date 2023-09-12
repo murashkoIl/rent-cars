@@ -57,7 +57,7 @@ export const PRODUCTION_YEARS = [
 
 export const FUELS = [
   { title: 'Fuel', value: '' },
-  { title: 'Fas', value: 'Gas' },
+  { title: 'Gas', value: 'Gas' },
   { title: 'Electricity', value: 'Electricity' },
 ];
 
@@ -90,3 +90,14 @@ export const FOOTER_LINKS = [
     ],
   },
 ];
+
+export const Transmissions = {
+  a: 'Automatic',
+  m: 'Manual',
+};
+
+export enum AppRoutes {
+  Home = '/',
+  CarsCatalogue = '/cars-catalogue',
+  Car = '/cars-catalogue',
+}
