@@ -16,3 +16,7 @@ export const fetchCars = async (): Promise<Car[]> => {
   const data: CarResponse[] = await response.json();
   return transformCars(data);
 };
+
+export const generateCarImageUrl = (car: Car, angle?: string) => {
+  
+} 

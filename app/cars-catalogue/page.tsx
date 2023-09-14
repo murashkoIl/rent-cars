@@ -1,12 +1,5 @@
-import { CarCatalogue } from '@/components';
-import { Suspense } from 'react';
+import { CarsCatalogue } from '@/components';
 
 export default function Home() {
-  return (
-    <main className="overflow-hidden pt-20">
-      <Suspense fallback={<div>Loading...</div>}>
-        <CarCatalogue />
-      </Suspense>
-    </main>
-  );
+  return <CarsCatalogue />;
 }

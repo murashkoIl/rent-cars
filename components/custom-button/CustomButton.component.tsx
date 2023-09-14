@@ -9,7 +9,8 @@ const CustomButtonComponent = ({
   containerStyles,
   textStyles,
   title,
-  icon
+  icon,
+  iconRotate,
 }: CustomButtonProps) => {
   return (
     <button
@@ -20,8 +21,13 @@ const CustomButtonComponent = ({
     >
       <span className={`flex-1 ${textStyles}`}>{title}</span>
       {icon && (
-        <div className='relative w-5 h-5'>
-          <Image src={icon} alt='Show details icon' fill className='object-contain' />
+        <div className={`relative w-5 h-5 ${iconRotate && 'rotate-180'}`}>
+          <Image
+            src={icon}
+            alt="Show details icon"
+            fill
+            className="object-contain"
+          />
         </div>
       )}
     </button>

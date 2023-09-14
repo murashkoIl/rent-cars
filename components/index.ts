@@ -1,11 +1,7 @@
 import { Hero } from './hero';
 import { Header } from './header';
 import { Footer } from './footer';
-import { CarCatalogue } from './car-catalogue';
+import { CarsCatalogue } from './cars-catalogue';
+import { CarInfo } from './car-info';
 
-export {
-  Hero,
-  Header,
-  Footer,
-  CarCatalogue,
-};
+export { Hero, Header, Footer, CarsCatalogue, CarInfo };

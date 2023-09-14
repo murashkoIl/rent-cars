@@ -1,9 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
 import { CarResponse, Car } from '@/api/api.types';
 
 export const transformCars = (cars: CarResponse[]): Car[] =>
   cars.map((car) => ({
-    id: uuidv4(),
+    id: car._id,
     cityMpg: car.city_mpg,
     carClass: car.class,
     combinationMpg: car.combination_mpg,

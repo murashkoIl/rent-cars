@@ -3,6 +3,7 @@ import { AppRoutes } from '@/constants';
 import type { Metadata } from 'next';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Cars Catalogue',
@@ -21,7 +22,9 @@ export default async function RootLayout({
   return (
     <>
       <Header />
-      {children}
+      <main className="overflow-hidden pt-20">
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      </main>
       <Footer />
     </>
   );

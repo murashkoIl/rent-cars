@@ -19,7 +19,7 @@ const CarCardComponent = (props: CarCardProps) => {
   );
 
   const onViewMore = useCallback(() => {
-    router.push(`${AppRoutes.Car}?id=${id}`);
+    router.push(`${AppRoutes.Car}/${id}`);
   }, [id, router]);
 
   return (
